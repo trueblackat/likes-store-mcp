@@ -123,12 +123,18 @@ LS_API_KEY=ls_... npx -y github:trueblackat/likes-store-mcp --check
 Одной командой:
 
 ```
-claude mcp add likes-store --env LS_API_KEY=ls_... -- npx -y github:trueblackat/likes-store-mcp
+claude mcp add --env LS_API_KEY=ls_... --transport stdio likes-store -- npx -y github:trueblackat/likes-store-mcp
 ```
 
-Или из скачанной папки: `claude mcp add likes-store --env LS_API_KEY=ls_... -- node /абсолютный/путь/likes-store-mcp/likes-store-mcp.mjs`.
+Или из скачанной папки: `claude mcp add --env LS_API_KEY=ls_... --transport stdio likes-store -- node /абсолютный/путь/likes-store-mcp/likes-store-mcp.mjs`.
 
-Чтобы сервер был доступен во всех проектах, а не только в текущем, добавьте `--scope user`.
+Порядок важен: имя сервера (`likes-store`) не должно стоять сразу после `--env LS_API_KEY=…`, иначе Claude Code прочтёт его как ещё одну переменную и откажется добавлять сервер.
+
+Чтобы сервер был доступен во всех проектах, а не только в текущем, добавьте `--scope user` перед именем сервера:
+
+```
+claude mcp add --env LS_API_KEY=ls_... --transport stdio --scope user likes-store -- npx -y github:trueblackat/likes-store-mcp
+```
 
 ### Cursor
 

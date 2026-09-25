@@ -20,10 +20,12 @@
 //
 //   3) Подключить в Claude Code:
 //
-//        claude mcp add likes-store --env LS_API_KEY=<ключ> \
+//        claude mcp add --env LS_API_KEY=<ключ> --transport stdio likes-store \
 //          -- npx -y github:trueblackat/likes-store-mcp
 //
-//      или из клона репозитория: node /абсолютный/путь/likes-store-mcp.mjs
+//      или из клона репозитория — то же, но после `--` стоит
+//      node /абсолютный/путь/likes-store-mcp.mjs. Имя сервера — не сразу за парой
+//      --env KEY=value: CLI прочёл бы его как ещё одну пару и отверг команду.
 //
 // Переменные окружения:
 //   LS_API_KEY       ключ API агентства (обязательно)
