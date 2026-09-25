@@ -136,9 +136,9 @@ test('tools/list: восемь инструментов, у каждого title
       assert.equal(t.inputSchema.additionalProperties, false, t.name);
       for (const hint of HINTS) assert.equal(typeof t.annotations[hint], 'boolean', `${t.name}.${hint}`);
       if (t.annotations.readOnlyHint) assert.equal(t.annotations.destructiveHint, false, t.name);
-      // Публичный текст: ни стоп-слова, ни кухни. Стоп-слово записано с классом
-      // [к], чтобы его не было в тексте самого файла: тесты уезжают и в копию
-      // пакета под другим именем, а в ней это слово не пишется нигде.
+      // Публичный текст: ни стоп-слова, ни кухни. Пакет ставят и клиенты белой
+      // витрины (RAZ-561), а там этого слова нет нигде. Стоп-слово записано с
+      // классом [к], чтобы его не было и в тексте самого файла.
       assert.doesNotMatch(t.description, /на[к]рутк|поставщик|закупк/i, t.name);
     }
 
