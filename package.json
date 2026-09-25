@@ -1,0 +1,38 @@
+{
+  "name": "likes-store-mcp",
+  "version": "0.1.0",
+  "description": "MCP-сервер likes-store: каталог, баланс, примерка и заказ продвижения в соцсетях из Claude, Cursor и других ИИ-клиентов",
+  "type": "module",
+  "bin": {
+    "likes-store-mcp": "./likes-store-mcp.mjs"
+  },
+  "main": "./likes-store-mcp.mjs",
+  "scripts": {
+    "test": "node --test test/*.test.mjs"
+  },
+  "files": [
+    "likes-store-mcp.mjs",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "likes-store",
+    "smm",
+    "social-media"
+  ],
+  "author": "trueblackat",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/trueblackat/likes-store-mcp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/trueblackat/likes-store-mcp/issues"
+  },
+  "homepage": "https://github.com/trueblackat/likes-store-mcp#readme"
+}
